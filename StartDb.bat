@@ -1,0 +1,2 @@
+cd .\MongoDb\
+mongod --dbpath .\
