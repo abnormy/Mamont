@@ -3,15 +3,17 @@
 <head>
     <title></title>
     <script type="text/javascript" src="/Scripts/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="/Scripts/main.js"></script>
 </head>
 <body>
     <p>Hello, <span id="hellospan"></span>!</p>
     <script>
-        $(function () {
-            $.getJSON('/api/values', function (data) {
-                $('#hellospan').text(data);
-            });
-        });
+//        $(function () {
+//            $.getJSON('/api/values', function (data) {
+//                $('#hellospan').text(data);
+//            });
+        //        });
+        GetName();
     </script>
 </body>
 </html>

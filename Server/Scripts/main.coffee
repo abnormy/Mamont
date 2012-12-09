@@ -1,0 +1,1 @@
+GetName = $.getJSON '/api/values', (data) => $('#hellospan').text(data)
