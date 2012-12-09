@@ -9,15 +9,16 @@ namespace Logic
 {
     public class LoginManager
     {
+        private readonly UserRepo userRepo = new UserRepo();
+        private readonly SessionRepo sessionRepo = new SessionRepo();
+
         public string SignIn(string email, string password)
         {
-            var repo = new UserRepo();
-            var user = repo.GetAll().FirstOrDefault(u => u.Auth.Login == email && u.Auth.Pass == password);
+            var user = userRepo.GetAll().FirstOrDefault(u => u.Auth.Login == email && u.Auth.Pass == password);
             if (user == null)
             {
                 return null;
             }
-            var sessionRepo = new SessionRepo();
             var session = new Session { UserId = user.Id, ExpirationDate = DateTime.Now.AddHours(2) };
             sessionRepo.Save(session);
             return session.Id;
@@ -25,9 +26,13 @@ namespace Logic
 
         public void SignUp(string email, string password)
         {
-            var repo = new UserRepo();
             var user = new User {Auth = new Auth {Login = email, Pass = password}};
-            repo.Save(user);
+            userRepo.Save(user);
+        }
+
+        public bool ValidateSession(string sessionId)
+        {
+            return sessionRepo.GetAll().Any(s => s.Id == sessionId);
         }
     }
 }

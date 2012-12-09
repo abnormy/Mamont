@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Controllers;
+using Logic;
 
 namespace Server.Controllers
 {
@@ -24,6 +25,14 @@ namespace Server.Controllers
             if (SessionId == null && insecure == null)
             {
                 throw new InvalidOperationException("You won't hack me!");
+            }
+            if (SessionId != null && insecure == null)
+            {
+                var manager = new LoginManager();
+                if (!manager.ValidateSession(SessionId))
+                {
+                    throw new NotImplementedException("Session key is invalid.");
+                }
             }
         }
     }
