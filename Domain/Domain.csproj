@@ -49,14 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BalanceLogRepo.cs" />
-    <Compile Include="Model\Auth.cs" />
-    <Compile Include="Model\BalanceLog.cs" />
-    <Compile Include="Model\Entity.cs" />
     <Compile Include="IRepo.cs" />
     <Compile Include="MongoContext.cs" />
-    <Compile Include="Model\Session.cs" />
-    <Compile Include="Model\Tax.cs" />
-    <Compile Include="Model\User.cs" />
     <Compile Include="BaseRepo.cs" />
     <Compile Include="SessionRepo.cs" />
     <Compile Include="UserRepo.cs" />
@@ -64,6 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{BC09DDDA-5049-443F-9372-F79F777DF9FB}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

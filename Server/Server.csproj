@@ -127,7 +127,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\SignInUpDto.cs" />
-    <Compile Include="Models\Tax.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +147,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{BC09DDDA-5049-443F-9372-F79F777DF9FB}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{41B67E88-03EB-44EB-81D2-37825CA45650}</Project>
       <Name>Logic</Name>

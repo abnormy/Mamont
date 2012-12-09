@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Entities;
 using Server.Models;
 
 namespace Server.Controllers
 {
     public class TaxesController : BaseController
     {
-        public List<Tax> List()
+        public List<Tax> GetTaxes()
         {
             throw new NotImplementedException();
         }
