@@ -12,12 +12,12 @@ $ ->
     $('#signin').bind 'click', (event) -> 
         event.preventDefault()
         data =
-            login: $("#inputEmail").val()
+            email: $("#inputEmail").val()
             password: $("#inputPassword").val()
         SendAjax("/api/signin", data, LoginSuccess, LoginError, "POST")
     $('#signup').bind 'click', (event) -> 
         event.preventDefault()
         data =
-            login: $("#inputEmail").val()
+            email: $("#inputEmail").val()
             password: $("#inputPassword").val()
         SendAjax("/api/signup", data, LoginSuccess, LoginError, "POST")
