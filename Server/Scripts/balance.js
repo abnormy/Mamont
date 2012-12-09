@@ -40,7 +40,7 @@
         _results = [];
         for (_i = 0, _len = value.length; _i < _len; _i++) {
           log = value[_i];
-          _results.push("<tr><td>" + log.date + "</td><td>" + log.date + "</td><td class='log_value log_positive'>" + log.date + "</td></tr>");
+          _results.push("<tr><td>" + log.Date + "</td><td>" + log.Comment + "</td><td class='log_value log_positive'>" + log.Amount + "</td></tr>");
         }
         return _results;
       })();
