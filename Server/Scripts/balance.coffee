@@ -21,7 +21,7 @@ GetTaxesSuccess = (value) ->
 GetLogSuccess = (value) ->
     if value?
         rows = for log in value
-                "<tr><td>#{log.date}</td><td>#{log.date}</td><td class='log_value log_positive'>#{log.date}</td></tr>"
+                "<tr><td>#{log.Date}</td><td>#{log.Comment}</td><td class='log_value log_positive'>#{log.Amount}</td></tr>"
         $("#logsTable").append(rows.join(""))
     else
         alert "GetLogs failed!"
