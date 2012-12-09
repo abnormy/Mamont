@@ -20,7 +20,7 @@
       var data;
       event.preventDefault();
       data = {
-        login: $("#inputEmail").val(),
+        email: $("#inputEmail").val(),
         password: $("#inputPassword").val()
       };
       return SendAjax("/api/signin", data, LoginSuccess, LoginError, "POST");
@@ -29,7 +29,7 @@
       var data;
       event.preventDefault();
       data = {
-        login: $("#inputEmail").val(),
+        email: $("#inputEmail").val(),
         password: $("#inputPassword").val()
       };
       return SendAjax("/api/signup", data, LoginSuccess, LoginError, "POST");
