@@ -27,9 +27,14 @@ namespace Server.Controllers
             user.Save();
         }
 
-        public void Remove(string id)
+        public void DeleteTax(string name)
         {
-            throw new NotImplementedException();
+            var manager = new UserManager();
+            var user = manager.LoadBySessionKey(SessionId);
+            var taxes = user.Taxes.ToList();
+            taxes.RemoveAll(t => t.Name == name);
+            user.Taxes = taxes;
+            user.Save();
         }
     }
 }
