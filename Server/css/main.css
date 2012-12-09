@@ -18,7 +18,7 @@
 
 .e_btn_login
 {
-    width: 18%;
+    width: 18.3%;
 }
 
 .balance
@@ -102,4 +102,12 @@
   content: "";
   display: table;
   clear: both;
+}
+
+.error_message
+{
+   margin-top: 6px;
+   margin-left: 12px;
+   margin-bottom: 0;
+   color: red; 
 }
