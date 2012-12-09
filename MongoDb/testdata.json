@@ -1,1 +1,1 @@
-{text: 'Mongo'}
+{"_id" : "1a665233-314e-4bf2-b5dc-605abf1a0236","Auth" : {"Login" : "admin","Pass" : "1"},"Balance" : 254.9,"Taxes" : [{"Name" : "Food","Cost" : 50.3}, { "Name" : "Party","Cost" : 10}]}

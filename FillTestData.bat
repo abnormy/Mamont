@@ -1,2 +1,2 @@
 cd .\MongoDb\
-mongoimport --db Mamont --collection greet --file testdata.json
+mongoimport --db Mamont --collection User --file testdata.json
