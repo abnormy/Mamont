@@ -24,10 +24,16 @@ namespace Logic
             return session.Id;
         }
 
-        public void SignUp(string email, string password)
+        public bool SignUp(string email, string password)
         {
+            var existing = userRepo.GetAll().FirstOrDefault(u => u.Auth.Login == email);
+            if (existing != null)
+            {
+                return false;
+            }
             var user = new User {Auth = new Auth {Login = email, Pass = password}};
             userRepo.Save(user);
+            return true;
         }
 
         public bool ValidateSession(string sessionId)
