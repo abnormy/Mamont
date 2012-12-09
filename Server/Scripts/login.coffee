@@ -3,20 +3,22 @@ LoginSuccess = (authkey) ->
         SetCookie "sessionId", authkey
         location.replace("main.html")
     else
-        alert "Login incorrect!"
+        $('#showError').append('<p class="error_message">Incorrect email or password,<br> Please try again</p>')
 
 LoginError = () ->
-    alert "Login failed!"
+    $('#showError').append('<p class="error_message">Incorrect email or password,<br> Please try again</p>')
 
 $ ->
     $('#signin').bind 'click', (event) -> 
         event.preventDefault()
+        $('.error_message').remove()
         data =
             email: $("#inputEmail").val()
             password: $("#inputPassword").val()
         SendAjax("/api/signin", data, LoginSuccess, LoginError, "POST")
     $('#signup').bind 'click', (event) -> 
         event.preventDefault()
+        $('.error_message').remove()
         data =
             email: $("#inputEmail").val()
             password: $("#inputPassword").val()

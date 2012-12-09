@@ -7,18 +7,19 @@
       SetCookie("sessionId", authkey);
       return location.replace("main.html");
     } else {
-      return alert("Login incorrect!");
+      return $('#showError').append('<p class="error_message">Incorrect email or password,<br> Please try again</p>');
     }
   };
 
   LoginError = function() {
-    return alert("Login failed!");
+    return $('#showError').append('<p class="error_message">Incorrect email or password,<br> Please try again</p>');
   };
 
   $(function() {
     $('#signin').bind('click', function(event) {
       var data;
       event.preventDefault();
+      $('.error_message').remove();
       data = {
         email: $("#inputEmail").val(),
         password: $("#inputPassword").val()
