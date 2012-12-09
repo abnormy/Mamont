@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using Domain;
 using Entities;
 
@@ -13,9 +10,8 @@ namespace Logic
         {
             var sessionRepo = new SessionRepo();
             var session = sessionRepo.GetAll().FirstOrDefault(s => s.Id == sessionKey);
-            return null;
-            /*var userRepo
-            session.UserId*/
+            var userRepo = new UserRepo();
+            return userRepo.GetAll().FirstOrDefault(u => u.Id == session.UserId);
         }
     }
 }

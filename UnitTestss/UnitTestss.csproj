@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="ControllerTests\UserControllerTests.cs" />
     <Compile Include="LogicTests\LoginManagerTests.cs" />
+    <Compile Include="LogicTests\UserManagerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -59,6 +60,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{8CE803D4-E21C-46B8-8DB6-8B4E222ED742}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{BC09DDDA-5049-443F-9372-F79F777DF9FB}</Project>
+      <Name>Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{41B67E88-03EB-44EB-81D2-37825CA45650}</Project>
