@@ -16,6 +16,7 @@ namespace Domain
 
         public void Save(T entity)
         {
+            if (entity.Id == null) entity.Id = Guid.NewGuid().ToString();
             GetCollection().Save(entity);
         }
 
