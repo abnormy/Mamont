@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+     <link href="../css/main.css" rel="stylesheet" media="screen">
+</head>
+<body>
+    <div class="wrapper">
+       <div class="balance">
+          <h2 style="display: inline-block;">Balance:</h2>
+          <span class="balance_text">100</span>
+          <a class="btn btn-success accordion-toggle btn_balance"  data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">+</a>
+          <div id="collapseOne" class="accordion-body collapse">
+             <div class="accordion-inner">
+               <input type="text" placeholder="Value">
+               <button type="submit" class="btn e_btn_login btn_value">Add</button>
+               <textarea rows="3" style="display: block; width: 286px;" placeholder="Comment"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <h2>Taxes</h2>
+        <table class="table table-striped table-bordered">
+        <thead>
+        <tr >
+          <th width="60%">Name</th>
+          <th width="31%">Value</th>
+          <th width="9%">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr >
+          <td>Internet</td>
+          <td>150</td>
+           <td><a class="btn btn-link" href="#"><i class=" icon-pencil"></i></a>
+           <a class="btn btn-link" href="#"><i class="icon-trash"></i></a></td>
+        </tr>
+         <tr >
+          <td>Water</td>
+          <td>75</td>
+           <td><a class="btn btn-link" href="#"><i class=" icon-pencil"></i></a>
+           <a class="btn btn-link" href="#"><i class="icon-trash"></i></a></td>
+        </tr>
+         <tr >
+          <td>House rent</td>
+          <td>4000</td>
+           <td><a class="btn btn-link" href="#"><i class=" icon-pencil"></i></a>
+           <a class="btn btn-link" href="#"><i class="icon-trash"></i></a></td>
+        </tr>
+        </tbody>
+        </table>
+
+        <a class="btn btn-success accordion-toggle btn_balance"  data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Add new</a>
+        <a class="btn btn-warning btn_balance btn_payall">PAY ALL</a>
+          <div id="collapseTwo" class="accordion-body collapse">
+             <div class="accordion-inner">
+               <input type="text" placeholder="Name" />&nbsp;<button type="submit" class="btn e_btn_login btn_value">Add</button>
+               <input type="text" placeholder="Value" />
+            </div>
+          </div>
+
+
+        <hr>
+        <h2>Finance log</h2>
+        <table class="table">
+        <thead>
+        <tr >
+          <th width="10%">Date</th>
+          <th width="80%">Event</th>
+          <th width="10%">Value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr >
+          <td>12/9/2012</td>
+          <td>Sold a new car</td>
+           <td class="log_value log_positive">+ 100500</td>
+        </tr>
+         <tr >
+          <td>12/8/2012</td>
+          <td>Bought a new car</td>
+           <td class="log_value log_negative">- 100500</td>
+        </tr>
+         <tr >
+          <td>12/7/2012</td>
+          <td>Sold my house</td>
+           <td class="log_value log_positive">+ 100500</td>
+        </tr>
+        </tbody>
+        </table>
+
+    </div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

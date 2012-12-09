@@ -1,0 +1,74 @@
+.l_main_column
+{
+    margin: 10% 0;
+}
+
+.logo
+{
+    display: block;
+    font-family: "Segoe UI", "Georgia", "serif";
+    margin: 0 19% 80px 19%;
+    font-size: 6em;
+}
+
+.e_logo_input
+{
+    width: 35%;
+}
+
+.e_btn_login
+{
+    width: 18%;
+}
+
+.balance
+{
+
+}
+
+.btn_balance
+{
+    margin-top: -14px;
+}
+
+.btn_payall
+{
+    float: right;
+}
+
+.btn_value
+{
+    margin-top: -10px;
+}
+
+.balance_text
+{
+    font-size: 2em;
+    margin: 0 10px;
+}
+
+.btn-link
+{
+    padding: 3px;
+}
+
+.wrapper
+{
+    width: 800px;
+    margin: 0 auto;
+}
+
+.log_value
+{
+    font-weight: bold;
+}
+
+.log_positive
+{
+    color: green;
+}
+
+.log_negative
+{
+    color: red;
+}
