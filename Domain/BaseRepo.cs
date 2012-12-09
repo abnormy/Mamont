@@ -1,18 +1,27 @@
 ﻿using System;
 using System.Linq;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
 namespace Domain
 {
-    public class BaseRepo<T> : IRepo<T> where T : Entity
+    public abstract class BaseRepo<T> : IRepo<T> where T : Entity
     {
-        public IQueryable<T> GetAll()
+        protected abstract string CollectionName { get; }
+
+        private MongoCollection<T> GetCollection()
         {
-            throw new NotImplementedException();
+            return MongoContext.Db.GetCollection<T>(CollectionName);
         }
 
-        public bool Save(T entity)
+        public void Save(T entity)
         {
-            throw new NotImplementedException();
+            GetCollection().Save(entity);
+        }
+
+        public IQueryable<T> GetAll()
+        {
+            return GetCollection().AsQueryable();
         }
     }
 }

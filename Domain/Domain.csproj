@@ -57,7 +57,7 @@
     <Compile Include="Model\Tax.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="BaseRepo.cs" />
-    <Compile Include="Model\UserRepo.cs" />
+    <Compile Include="UserRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
