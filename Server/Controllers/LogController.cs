@@ -15,7 +15,7 @@ namespace Server.Controllers
         {
             var manager = new UserManager();
             var user = manager.LoadBySessionKey(SessionId).WithBallanceLog();
-            return user.BallanceLog.ToList();
+            return user.BallanceLog.OrderByDescending(l => l.Date).ToList();
         }
     }
 }
