@@ -14,4 +14,18 @@ namespace Logic
             return userRepo.GetAll().FirstOrDefault(u => u.Id == session.UserId);
         }
     }
+
+    public static class UserExtensions
+    {
+        public static User WithBallanceLog(this User user)
+        {
+            if (user == null)
+            {
+                return null;
+            }
+            var repo = new BalanceLogRepo();
+            user.BallanceLog = repo.GetAll().Where(b => b.UserId == user.Id);
+            return user;
+        }
+    }
 }

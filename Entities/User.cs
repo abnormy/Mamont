@@ -7,5 +7,6 @@ namespace Entities
         public Auth Auth { get; set; }
         public double Balance { get; set; }
         public IEnumerable<Tax> Taxes { get; set; }
+        public IEnumerable<BalanceLog> BallanceLog { get; set; }
     }
 }
