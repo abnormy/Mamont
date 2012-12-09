@@ -3,17 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Controllers;
 
 namespace Server.Controllers
 {
     [AuthenticationFilter]
     public abstract class BaseController : ApiController
     {
-        protected string SessionId { get; private set; }
-
-        internal virtual void OnActionExecuting()
+        private const string AuthenticationHeaderName = "AuthKey";
+        protected string SessionId { get; private set; }        internal virtual void OnActionExecuting(HttpActionContext context)
         {
-            //TODO: parse authenticatiuon header here
+            IEnumerable<string> values;
+            context.Request.Headers.TryGetValues(AuthenticationHeaderName, out values);
+            if (values != null && values.Any())
+            {
+                SessionId = values.First();
+            }
+
+            var insecure = context.ActionDescriptor.GetFilters().FirstOrDefault(f => f.GetType() == typeof (InsecureAttribute));
+            if (SessionId == null && insecure == null)
+            {
+                throw new InvalidOperationException("You won't hack me!");
+            }
         }
     }
 }

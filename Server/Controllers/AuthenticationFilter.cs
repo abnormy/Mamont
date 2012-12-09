@@ -13,7 +13,7 @@ namespace Server.Controllers
         {
             var baseController = context.ControllerContext.Controller as BaseController;
             if (baseController != null)
-                baseController.OnActionExecuting();
+                baseController.OnActionExecuting(context);
         }
     }
 }
