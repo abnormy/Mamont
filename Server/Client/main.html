@@ -11,14 +11,14 @@
 <body>
     <div class="wrapper">
        <div class="balance">
-          <h2 style="display: inline-block;">Balance:</h2>
+          <h2  class="balance_title">Balance:</h2>
           <span id="balance_value" class="balance_text">100</span>
           <a class="btn btn-success accordion-toggle btn_balance"  data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">+</a>
           <div id="collapseOne" class="accordion-body collapse">
-             <div class="accordion-inner">
-               <input type="text" placeholder="Value">
-               <button type="submit" class="btn e_btn_login btn_value">Add</button>
-               <textarea rows="3" style="display: block; width: 286px;" placeholder="Comment"></textarea>
+             <div class="accordion-inner  l_accordion_section">
+               <input type="text" class="e_accordion_input" size="45" placeholder="Value">
+               <textarea rows="4" class="e_accordion_input" placeholder="Comment"></textarea>
+               <button type="submit" class="btn btn-large">Add</button>
             </div>
           </div>
         </div>
@@ -37,15 +37,17 @@
         </tbody>
         </table>
 
-        <a class="btn btn-success accordion-toggle btn_balance"  data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Add new</a>
-        <a class="btn btn-warning btn_balance btn_payall">PAY ALL</a>
+        <div class="l_taxes_section">
+        <a class="btn btn-success accordion-toggle btn_addtax"  data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Add new</a>
+        <a class="btn btn-warning btn_payall">PAY ALL</a>
           <div id="collapseTwo" class="accordion-body collapse">
-             <div class="accordion-inner">
-               <input type="text" placeholder="Name" />&nbsp;<button type="submit" class="btn e_btn_login btn_value">Add</button>
-               <input type="text" placeholder="Value" />
+             <div class="accordion-inner l_accordion_section">
+               <input type="text" class="e_accordion_input" placeholder="Name" />
+               <input type="text" class="e_accordion_input" placeholder="Value" />
+               <button class="btn btn-large" type="submit">Add</button>
             </div>
           </div>
-
+        </div>
 
         <hr>
         <h2>Finance log</h2>

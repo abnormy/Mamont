@@ -23,7 +23,8 @@
 
 .balance
 {
-
+    margin: 60px 0 30px;
+    overflow: visible;
 }
 
 .btn_balance
@@ -31,20 +32,27 @@
     margin-top: -14px;
 }
 
+.btn_addtax
+{
+    margin-top: -10px;
+    float: left;
+}
+
 .btn_payall
 {
+    margin-top: -10px;
     float: right;
 }
 
-.btn_value
+.balance_title
 {
-    margin-top: -10px;
+    display: inline-block;
+    margin: 0 0 -5px 0;
 }
 
 .balance_text
 {
     font-size: 2em;
-    margin: 0 10px;
 }
 
 .btn-link
@@ -56,6 +64,11 @@
 {
     width: 800px;
     margin: 0 auto;
+}
+
+.center
+{
+    margin-top: 20%;
 }
 
 .log_value
@@ -71,4 +84,22 @@
 .log_negative
 {
     color: red;
+}
+
+.l_accordion_section
+{
+    width: 260px;
+    margin-top: 10px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.e_accordion_input
+{
+    width: 100%;
+} 
+
+.l_taxes_section:after {
+  content: "";
+  display: table;
+  clear: both;
 }
