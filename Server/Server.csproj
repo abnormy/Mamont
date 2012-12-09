@@ -123,7 +123,6 @@
     <Compile Include="Controllers\TaxesController.cs" />
     <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

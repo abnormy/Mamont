@@ -9,7 +9,7 @@ namespace UnitTestss.ControllerTests
         [Test]
         public void TheTest()
         {
-            var x = new UserController();
+            
         }
     }
 }
