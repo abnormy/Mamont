@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Domain;
 using Entities;
 
@@ -26,6 +27,22 @@ namespace Logic
             var repo = new BalanceLogRepo();
             user.BallanceLog = repo.GetAll().Where(b => b.UserId == user.Id);
             return user;
+        }
+
+        public static void UpdateBalance(this User user, double diff, string comment)
+        {
+            if (diff <= 0)
+                return;
+            user.Balance += diff;
+            var log = new BalanceLog { Amount = diff, UserId = user.Id, Date = DateTime.UtcNow, Comment = comment };
+            var repo = new BalanceLogRepo();
+            repo.Save(log);
+        }
+
+        public static void Save(this User user)
+        {
+            var userRepo = new UserRepo();
+            userRepo.Save(user);
         }
     }
 }

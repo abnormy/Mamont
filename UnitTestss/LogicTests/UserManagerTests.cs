@@ -38,5 +38,23 @@ namespace UnitTestss.LogicTests
             Assert.AreEqual("comment", balance.Comment, "Comment incorrect.");
             Assert.AreEqual(date, balance.Date, "Date incorrect.");
         }
+
+        [Test]
+        public void UpdateBalanceTest()
+        {
+            var userRepo = new UserRepo();
+
+            var user = new User();
+            userRepo.Save(user);
+
+            user.UpdateBalance(40, "Salary ;(");
+            user.Save();
+
+            var loaded = userRepo.GetAll().Single(u => u.Id == user.Id).WithBallanceLog();
+            Assert.AreEqual(40, loaded.Balance, "Balance not loaded.");
+            Assert.AreEqual(1, loaded.BallanceLog.Count(), "Log is incorrect.");
+            Assert.AreEqual(40, loaded.BallanceLog.First().Amount, "Amount is incorrect.");
+            Assert.AreEqual("Salary ;(", loaded.BallanceLog.First().Comment, "Comment is incorrect");
+        }
     }
 }
