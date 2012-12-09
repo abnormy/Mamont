@@ -5,17 +5,16 @@ namespace Server.Controllers
 {
     public class UserController : BaseController
     {
-        [HttpGet]
         [Insecure]
-        public string SignUp(string email, string password)
+        public string PostSignUp(string email, string password)
         {
-            throw new NotImplementedException();
+            return "123";
         }
 
         [Insecure]
-        public string SignIn(string email, string password)
+        public string PostSignIn(string email, string password)
         {
-            throw new NotImplementedException();
+            return (email ?? "<no email>") + (password ?? "<no password>");
         }
     }
 }
