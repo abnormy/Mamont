@@ -118,6 +118,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AuthenticationFilter.cs" />
     <Compile Include="Controllers\BallanceController.cs" />
+    <Compile Include="Controllers\LogController.cs" />
     <Compile Include="Controllers\SignInController.cs" />
     <Compile Include="Controllers\InsecureAttribute.cs" />
     <Compile Include="Controllers\SignUpController.cs" />

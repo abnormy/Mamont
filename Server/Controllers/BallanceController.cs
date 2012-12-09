@@ -13,12 +13,5 @@ namespace Server.Controllers
             var user = manager.LoadBySessionKey(SessionId);
             return user.Balance;
         }
-
-        public List<BalanceLog> GetBalanceLog()
-        {
-            var manager = new UserManager();
-            var user = manager.LoadBySessionKey(SessionId).WithBallanceLog();
-            return user.BallanceLog.ToList();
-        }
     }
 }
