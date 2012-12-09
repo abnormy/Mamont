@@ -17,9 +17,14 @@ namespace Server.Controllers
             return user == null ? null : user.Taxes.ToList();
         }
 
-        public void Save(Tax tax)
+        public void PutTax(Tax tax)
         {
-            throw new NotImplementedException();
+            var manager = new UserManager();
+            var user = manager.LoadBySessionKey(SessionId);
+            var taxes = user.Taxes.ToList();
+            taxes.Add(tax);
+            user.Taxes = taxes;
+            user.Save();
         }
 
         public void Remove(string id)
