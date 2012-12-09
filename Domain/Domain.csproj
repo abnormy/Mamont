@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BalanceLogRepo.cs" />
     <Compile Include="Model\Auth.cs" />
     <Compile Include="Model\BalanceLog.cs" />
     <Compile Include="Model\Entity.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Model\Tax.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="BaseRepo.cs" />
+    <Compile Include="SessionRepo.cs" />
     <Compile Include="UserRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
