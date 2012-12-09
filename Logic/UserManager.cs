@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Domain;
 using Entities;
@@ -12,7 +13,13 @@ namespace Logic
             var sessionRepo = new SessionRepo();
             var session = sessionRepo.GetAll().FirstOrDefault(s => s.Id == sessionKey);
             var userRepo = new UserRepo();
-            return userRepo.GetAll().FirstOrDefault(u => u.Id == session.UserId);
+            var user = userRepo.GetAll().FirstOrDefault(u => u.Id == session.UserId);
+            if (user != null)
+            {
+                if (user.Taxes == null)
+                    user.Taxes = new List<Tax>();
+            }
+            return user;
         }
     }
 

@@ -8,5 +8,10 @@ namespace Entities
         public double Balance { get; set; }
         public IEnumerable<Tax> Taxes { get; set; }
         public IEnumerable<BalanceLog> BallanceLog { get; set; }
+
+        public User()
+        {
+           Taxes = new List<Tax>();
+        }
     }
 }

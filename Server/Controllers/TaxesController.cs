@@ -14,7 +14,7 @@ namespace Server.Controllers
         {
             var manager = new UserManager();
             var user = manager.LoadBySessionKey(SessionId);
-            return user == null ? null : user.Taxes.ToList();
+            return user == null ? null : (user.Taxes ?? new List<Tax>()).ToList();
         }
 
         public void PutTax(Tax tax)
