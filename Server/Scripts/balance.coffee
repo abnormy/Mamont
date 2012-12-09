@@ -13,7 +13,8 @@ GetBalanceError = () ->
 GetTaxesSuccess = (value) ->
     if value?
         rows = for tax in value
-                "<tr><td>#{tax.Name}</td><td>#{tax.Cost}</td><td><a class='btn btn-link' href='#''><i class='' icon-pencil'></i></a><a class='btn btn-link' href='#'><i class='icon-trash'></i></a></td></tr>"
+                "<tr><td>#{tax.Name}</td><td>#{tax.Cost}</td><td><a class='btn btn-link' href='#''><i class='' icon-pencil'></i></a><a class='btn btn-link' href='#'><i class='icon-trash' data-name='#{tax.Name}'></i></a></td></tr>"
+        $("#taxesTable tbody").html("")
         $("#taxesTable").append(rows.join(""))
     else
         alert "GetTaxes failed!"
@@ -21,7 +22,10 @@ GetTaxesSuccess = (value) ->
 GetLogSuccess = (value) ->
     if value?
         rows = for log in value
-                "<tr><td>#{log.Date}</td><td>#{log.Comment}</td><td class='log_value log_positive'>#{log.Amount}</td></tr>"
+            date = new Date(parseInt(/\d+/g.exec("/Date(1355063352862)/")[0]))
+            dateString  = date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes()
+            "<tr><td>#{dateString}</td><td>#{log.Comment}</td><td class='log_value log_positive'>#{log.Amount}</td></tr>"
+        $("#logsTable tbody").html("")
         $("#logsTable").append(rows.join(""))
     else
         alert "GetLogs failed!"
@@ -32,10 +36,57 @@ GetBalance = () ->
 GetTaxes = () ->
     SendAjax("/api/taxes", null, GetTaxesSuccess, null, "GET")
 
+AddBalanceSuccess = (value) ->
+    GetBalance()
+    GetLog()
+
+PayAllSuccess = (value) ->
+    GetBalance()
+    GetLog()
+
+AddTaxesSuccess = (value) ->
+    GetTaxes()
+
+DeleteTaxSuccess = (value) ->
+    GetTaxes()
+
+AddBalance = () ->
+    data =
+        Diff: $("#addAmount").val()
+        Comment: $("#addComment").val()
+    SendAjax("/api/ballance", data, AddBalanceSuccess, null, "POST")
+
+AddTaxes = () ->
+    data =
+        Name: $("#taxesName").val()
+        Cost: $("#taxesValue").val()
+    SendAjax("/api/taxes", data, AddTaxesSuccess, null, "PUT")
+
+PayAll = () ->
+    SendAjax("/api/TaxProcessing", null, PayAllSuccess, null, "GET")
+
+DeleteTaxes = (element) ->
+    #alert()
+     data =
+         Name: $(element).data("name")
+     SendAjax("/api/taxes", data, DeleteTaxSuccess, null, "DELETE")
+
 GetLog = () ->
     SendAjax("/api/log", null, GetLogSuccess, null, "GET")
 
 $ ->
+    $('#addBalance').bind 'click', (event) -> 
+        event.preventDefault()
+        AddBalance()
+    $('#addTax').bind 'click', (event) -> 
+        event.preventDefault()
+        AddTaxes()
+    $('.icon-trash').live 'click', (event) -> 
+        event.preventDefault()
+        DeleteTaxes($(this))
+    $('#payAll').bind 'click', (event) -> 
+        event.preventDefault()
+        PayAll()
     GetBalance()
     GetTaxes()
     GetLog()

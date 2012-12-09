@@ -16,9 +16,9 @@
           <a class="btn btn-success accordion-toggle btn_balance"  data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">+</a>
           <div id="collapseOne" class="accordion-body collapse">
              <div class="accordion-inner  l_accordion_section">
-               <input type="text" class="e_accordion_input" size="45" placeholder="Value">
-               <textarea rows="4" class="e_accordion_input" placeholder="Comment"></textarea>
-               <button type="submit" class="btn btn-large">Add</button>
+               <input type="text" class="e_accordion_input" size="45" placeholder="Value" id="addAmount">
+               <textarea rows="4" class="e_accordion_input" placeholder="Comment" id="addComment"></textarea>
+               <button type="submit" class="btn btn-large" id="addBalance">Add</button>
             </div>
           </div>
         </div>
@@ -39,12 +39,12 @@
 
         <div class="l_taxes_section">
         <a class="btn btn-success accordion-toggle btn_addtax"  data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Add new</a>
-        <a class="btn btn-warning btn_payall">PAY ALL</a>
+        <a class="btn btn-warning btn_payall" id="payAll">PAY ALL</a>
           <div id="collapseTwo" class="accordion-body collapse">
              <div class="accordion-inner l_accordion_section">
-               <input type="text" class="e_accordion_input" placeholder="Name" />
-               <input type="text" class="e_accordion_input" placeholder="Value" />
-               <button class="btn btn-large" type="submit">Add</button>
+               <input type="text" class="e_accordion_input" placeholder="Name" id="taxesName" />
+               <input type="text" class="e_accordion_input" placeholder="Value" id="taxesValue" />
+               <button class="btn btn-large" type="submit" id="addTax">Add</button>
             </div>
           </div>
         </div>
@@ -54,8 +54,8 @@
         <table class="table" id="logsTable">
         <thead>
         <tr >
-          <th width="10%">Date</th>
-          <th width="80%">Event</th>
+          <th width="20%">Date</th>
+          <th width="70%">Event</th>
           <th width="10%">Value</th>
         </tr>
         </thead>
