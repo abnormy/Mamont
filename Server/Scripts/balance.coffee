@@ -23,8 +23,9 @@ GetLogSuccess = (value) ->
     if value?
         rows = for log in value
             date = new Date(parseInt(/\d+/g.exec("/Date(1355063352862)/")[0]))
+            valueClass = if log.Amount > 0 then "log_positive" else "log_negative"
             dateString  = date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes()
-            "<tr><td>#{dateString}</td><td>#{log.Comment}</td><td class='log_value log_positive'>#{log.Amount}</td></tr>"
+            "<tr><td>#{dateString}</td><td>#{log.Comment}</td><td class='log_value #{valueClass}'>#{log.Amount}</td></tr>"
         $("#logsTable tbody").html("")
         $("#logsTable").append(rows.join(""))
     else

@@ -34,7 +34,7 @@
   };
 
   GetLogSuccess = function(value) {
-    var date, dateString, log, rows;
+    var date, dateString, log, rows, valueClass;
     if (value != null) {
       rows = (function() {
         var _i, _len, _results;
@@ -42,8 +42,9 @@
         for (_i = 0, _len = value.length; _i < _len; _i++) {
           log = value[_i];
           date = new Date(parseInt(/\d+/g.exec("/Date(1355063352862)/")[0]));
+          valueClass = log.Amount > 0 ? "log_positive" : "log_negative";
           dateString = date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes();
-          _results.push("<tr><td>" + dateString + "</td><td>" + log.Comment + "</td><td class='log_value log_positive'>" + log.Amount + "</td></tr>");
+          _results.push("<tr><td>" + dateString + "</td><td>" + log.Comment + "</td><td class='log_value " + valueClass + "'>" + log.Amount + "</td></tr>");
         }
         return _results;
       })();
