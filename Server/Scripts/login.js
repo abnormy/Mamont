@@ -5,7 +5,7 @@
   LoginSuccess = function(authkey) {
     if (authkey != null) {
       SetCookie("sessionId", authkey);
-      return location.replace("main.html");
+      return window.location.href = "main.html";
     } else {
       return $('#showError').append('<p class="error_message">Incorrect email or password,<br> Please try again</p>');
     }
@@ -29,6 +29,7 @@
     return $('#signup').bind('click', function(event) {
       var data;
       event.preventDefault();
+      $('.error_message').remove();
       data = {
         email: $("#inputEmail").val(),
         password: $("#inputPassword").val()

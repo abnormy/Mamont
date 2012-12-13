@@ -1,7 +1,7 @@
 LoginSuccess = (authkey) ->
     if authkey?
         SetCookie "sessionId", authkey
-        location.replace("main.html")
+        window.location.href = "main.html"
     else
         $('#showError').append('<p class="error_message">Incorrect email or password,<br> Please try again</p>')
 
