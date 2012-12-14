@@ -64,6 +64,8 @@
   };
 
   AddBalanceSuccess = function(value) {
+    ClearInput("#addAmount");
+    ClearInput("#addComment");
     GetBalance();
     return GetLog();
   };
@@ -74,6 +76,8 @@
   };
 
   AddTaxesSuccess = function(value) {
+    ClearInput("#taxesName");
+    ClearInput("#taxesValue");
     return GetTaxes();
   };
 

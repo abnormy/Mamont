@@ -42,4 +42,8 @@
     return $.ajax(params);
   };
 
+  this.ClearInput = function(id) {
+    return $(id).val("");
+  };
+
 }).call(this);

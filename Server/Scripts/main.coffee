@@ -23,3 +23,6 @@
         success: (data) => success data
         error: (data) => error data
     $.ajax params
+
+@ClearInput = (id) ->
+    $(id).val("")

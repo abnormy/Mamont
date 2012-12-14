@@ -38,6 +38,8 @@ GetTaxes = () ->
     SendAjax("/api/taxes", null, GetTaxesSuccess, null, "GET")
 
 AddBalanceSuccess = (value) ->
+    ClearInput("#addAmount")
+    ClearInput("#addComment")
     GetBalance()
     GetLog()
 
@@ -46,6 +48,8 @@ PayAllSuccess = (value) ->
     GetLog()
 
 AddTaxesSuccess = (value) ->
+    ClearInput("#taxesName")
+    ClearInput("#taxesValue")
     GetTaxes()
 
 DeleteTaxSuccess = (value) ->
